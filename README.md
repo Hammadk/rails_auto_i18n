@@ -1,12 +1,12 @@
 ## I18n helper for Rails
 
 A `Ruby` script that helps you internationalize your Rails app! This script 
-outputs the content for en.yml file for a Rails app.
+reads `html.erb` files and outputs the hard-coded text in en.yml-friendly format.
 
 Its reads through all of the `html.erb` files, parses them with `Nokogiri`, and
 find all of the nodes with hard-coded text in them. 
 
-Usage: `ruby lib/i18n_helper.rb <directory_with_html_erb_files>`
+Usage: `ruby lib/auto_i18n.rb <directory_with_html_erb_files>`
 
 
 ### TODO
@@ -16,7 +16,14 @@ Usage: `ruby lib/i18n_helper.rb <directory_with_html_erb_files>`
 files with the i18n tag in a translate method. I.e. `<% t(".unique_tag") %>`
 3. Write tests (Currently only tested on dummy app)
 
+### Known Limitations:
+* The extraction of text isn't perfect, and requires someone to look over the
+  output for oddities.
+* The unique identifiers are unique, but they are not the very readable.
+  Ideally, someone should go over them and replace them with human-friendly
+  identifiers.
 
-### External Gems:
+
+### External Dependencies:
 * NokoGiri
 

@@ -5,7 +5,7 @@ require "helper_modules/uniquify_id"
 require "helper_modules/yml_path_finder"
 
 # Usage: ruby i18n_helper <directory_with_views>
-module I18NHelper
+module AutoI18n
   extend UniquifyID
   extend YMLPathFinder
 
@@ -63,5 +63,5 @@ end
 
 # input_param = "../test/dummy_app/app/views"
 input_param = ARGV[0]
-I18NHelper.parse_views(input_param)
+AutoI18n.parse_views(input_param)
 
