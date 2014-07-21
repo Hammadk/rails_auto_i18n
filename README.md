@@ -6,10 +6,13 @@ reads `html.erb` files and outputs the hard-coded text in an en.yml-friendly for
 Its reads through all of the given `html.erb` files, parses them and
 finds all of the nodes with hard-coded text. 
 
+### Usage:
 ```sh
-Usage: `ruby lib/auto_i18n.rb <directory_with_html_erb_files>`
-```
+git clone git@github.com:Hammadk/rails_auto_i18n.git
+gem install nokogiri
 
+ruby rails_auto_i18n/lib/auto_i18n.rb <directory_with_html_erb_files>
+```
 
 ### TODO
 1. Implement the --tag option, that outputs the rails translate method after
