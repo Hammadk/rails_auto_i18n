@@ -12,18 +12,16 @@ module AutoI18n
   BLACK_LIST = %w[ script ]
 
   def self.parse_views(views_dir)
-    all_view_files = Dir.glob(File.join(views_dir, "**", "*.html.erb"))
+    all_view_files = Dir.glob(File.join(views_dir, "**", "*.{erb,html}"))
     all_view_files.each do |file|
 
       yml_path = find_yml_path(file)
       indentation = output_and_indent(yml_path)
-
       repeated_ids_in_file = {}
 
       doc = Nokogiri::HTML(open(file))
       doc.search("//text()").each do |node|
         next if filtered_out?(node)
-
         unique_id = determine_id(node, repeated_ids_in_file)
         puts "#{indentation}#{unique_id}: #{node.text.strip}"
       end
