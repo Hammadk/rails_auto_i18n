@@ -1,8 +1,8 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require "rubygems"
 require "nokogiri"
-require "helper_modules/uniquify_id"
-require "helper_modules/yml_path_finder"
+require "auto_18n/uniquify_id"
+require "auto_18n/yml_path_finder"
 
 # Usage: ruby i18n_helper <directory_with_views>
 module AutoI18n
